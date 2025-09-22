@@ -1,0 +1,69 @@
+SQL -Topics
+
+Introduction to Database
+Introduction to DBMS
+Characteristics of DBMS
+DBMS Models
+Relational DBMS
+Data Integrity
+Security in Database
+Normalization & Codd's Rules for "FULLY" Functional System
+First Normal Form
+Second Normal Form
+Third Normal Form
+Relational DBMS
+Data Integrity
+Structured Query Language
+Interacting SQL using SQL *Plus
+Using SQL *Plus
+What is SQL?
+Rules for SQL statements
+Standard SQL Statement Groups
+Basic DataTypes
+Rules for naming a Table
+Specifying Integrity Constraints
+DDL Statements: Create, Alter, Drop, Truncate
+Regular vs Temporary tables
+Data Manipulation Language
+Inserting Rows Into a Table
+Deleting Rows from a Table
+Updating Rows in a Table
+Data Control Language
+Grant
+Revoke 
+Database Objects
+Index
+Synonym
+Sequence
+Views
+Data Query Language (Select Statement)
+Select Statement
+Distinct Clause
+Comparison, arithmetic & Logical Operators SQL Operators
+The ORDER BY Clause
+Tips and Tricks
+Aggregate Functions, Group By and Having Clause
+Aggregate Functions
+The GROUP BY Clause
+HAVING Clause
+ROLLUP Operation
+CUBE Operation
+Tips and Tricks
+Transactions
+Transaction
+Commit Command
+Rollback and Savepoints
+Joins and Subqueries
+Inner/Equi Join
+Outer Join
+Self Join
+Subquery
+SUBQUERIES Using Comparison Operators Co-related Subquery
+Exists / Not Exists Operator
+Set Operations
+The UNION Operator
+The INTERSECT Operator
+The MINUS Operator
+The UNION Operator
+The INTERSECT Operator
+Tips and Tricks
