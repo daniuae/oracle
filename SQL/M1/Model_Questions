@@ -1,0 +1,257 @@
+Department wise highest salary
+
+
+SELECT e.departmentid, e.name AS Employee, e.salary AS Salary
+FROM Employee e
+WHERE e.salary = (
+    SELECT MAX(salary)
+    FROM Employee
+    WHERE departmentid = e.departmentid
+);
+
+or
+
+select e.departmentid,e.name as Employee , e.salary as Salary
+from Employee e where
+e.salary = (select max(salary) from Employee
+group by departmentid)
+
+
+
+2.
+
+WITH Count_Table AS (
+    SELECT
+        c.citynmae AS City,
+        TO_CHAR(c.date, 'YYYY-MM') AS Month,
+        RANK() OVER (ORDER BY c.temperature DESC) AS Temp,
+        c.humidty AS Humidity
+    FROM table1 x
+    JOIN table2 y ON x.m = y.m
+)
+SELECT
+    City,
+    Month,
+    Temp,
+    AVG(Humidity) AS Avg_Humidity
+FROM Count_Table
+GROUP BY City, Month, Temp
+ORDER BY Month, Temp;
+
+
+3.
+
+SELECT
+    s.customer_id,
+    s.transaction_id,
+    s.transaction_date,
+    p.unit_price,
+    s.quantity,
+   SUM( p.unit_price * s.quantity) AS total_purchase_amount,
+
+    RANK() OVER (
+        ORDER BY SUM( p.unit_price * s.quantity) DESC
+    ) AS purchase_rank
+FROM sales s
+JOIN products p ON s.product_id = p.product_id
+Maybe groupby;
+
+
+
+
+
+
+
+-------------------------------------------------------------
+
+Write an SQL query to retrieve the names of all tracks along with the titles of the albums they belong to. Use the Tracks and Albums tables, and assume each track is linked to an album via
+
+album_id
+
+SELECT
+
+t.name AS track_name,
+
+a.title AS album_title
+
+FROM
+
+Tracks t
+
+JOIN
+
+Albums a ON t.album_id= a album_id;
+
+
+
+
+
+
+
+-------------------------------------------------------------
+Write an SQL query to list each customer's ID and name, along with the total value of their purchases Additionally, rank the customers based on their total purchase value in descending order. Use the Customers and Purchases tables, where each purchase includes a quantity and unit price.
+
+SELECT
+
+c.customer_id,
+
+c.customer_name,
+
+SUM(p.quantity p.unit price) AS total_purchased_value,
+
+RANK() OVER (ORDER BY SUM(p.quantity punit_price) DESC) AS purchase_rank
+
+FROM
+
+Customers c
+
+JOIN
+
+Purchases p ON c.customer_id = p.customer_id
+
+GROUP BY
+
+c.customer_id, c.customer_name;
+
+-------------------------------------------------------------
+Write an SQL query to retrieve the customer ID, customer name, purchase ID, and total price for all purchases where the total price is between 12 and 14. Use the Customers and Purchases
+
+tables, assuming purchases are linked to customers via
+
+customer_id
+
+SELECT
+
+c.customer_id,
+
+c.customer_name,
+
+p.purchase id,
+
+p.total_price
+
+FROM
+
+Customers c
+
+JOIN
+
+Purchases p ON c.customer_id = p.customer_id
+
+WHERE
+
+p.total price BETWEEN 12 AND 14;
+
+-------------------------------------------------------------
+Write an SQL query to retrieve the customer ID, customer name, and city for all customers who are located in Prague. Use the Customers table
+
+SELECT
+
+customer id,
+
+customer_name,
+
+city
+
+FROM
+
+Customers
+
+WHERE
+
+city = 'Prague';
+
+-------------------------------------------------------------
+
+Write an SQL query to find the highest salary in each department and display it along with the corresponding department name. Use the Employees and Departments tables. Assume each
+
+employee belongs to a department via department_id
+
+WITH DepartmentMaxSalaries AS (
+
+SELECT
+
+department id,
+
+)
+
+MAX(salary) AS max_salary
+
+FROM
+
+Employees
+
+GROUP BY
+
+department_id
+
+SELECT
+
+d.department_name,
+
+dms.max_salary
+
+FROM
+
+DepartmentMaxSalaries dms
+
+JOIN
+
+Departments d ON dms department id = d.department_id,
+
+-------------------------------------------------------------
+Write a SQL query to find the average humidity for each city and month, ranked by temperature in descending order."
+
+This question prompts the use of
+
+A RANK() function to rank cities by temperature
+
+Conversion of date to month format
+
+Aggregation of humidity values using AVG()
+
+Grouping by city, month, and temperature rank
+
+Ordering results by month and temperature rank
+
+WITH Count Table AS (SELECT
+
+c.citynmae AS City,
+
+TO CHAR(c.date., 'YYYY-MM') AS Month, RANK() OVER (ORDER BY c.temperature DESC) AS Temp.
+
+c.humidty AS Humidity
+FROM table 1 x
+
+JOIN table2 y ON x.m = y.m
+
+SELECT
+
+City,
+
+Month,
+
+Temp,
+
+AVG(Humidity) AS Avg. Humidity
+
+FROM Count Table
+
+GROUP BY City, Month, Temp
+
+ORDER BY Month, Temp:
+-------------------------------------------------------------
+
+
+-------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------
+
+
+
+
+
+-------------------------------------------------------------
